@@ -1,0 +1,30 @@
+# Distribution directory
+bin
+bin/**
+build
+build/static
+.idea
+tinypng-sigs
+# Dependency directories
+node_modules
+# Optional npm cache directory
+.npm
+
+dist
+!src/login
+dist/**
+
+
+# OS temps
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Optional REPL history
+.node_repl_history
+
+*.bak
+**.bak
