@@ -1,0 +1,22 @@
+.body-warp {
+  display: flex;
+  min-height: 100%;
+}
+
+.body-right {
+  flex: 1;
+  min-height: 100%;
+  overflow: scroll;
+  background: #fff;
+}
+
+.breadcrumb {
+  padding: 24px;
+  background-color: #FFF;
+}
+
+
+.table {
+  width: 100%;
+  margin: 0px 24px;
+}
