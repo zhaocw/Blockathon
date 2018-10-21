@@ -43,6 +43,7 @@
       if (data) {
         this.list = JSON.parse(data).list
       } else {
+        console.log("=======");
         localStorage.setItem('blockathon', JSON.stringify(Data));
         this.list = Data.list
       }

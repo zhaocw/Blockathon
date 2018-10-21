@@ -84,15 +84,14 @@
             await this.meta.confirmProject.call()
             const { address } = data.list[index]
             this.web3.eth.getTransactionReceipt(address, (err, receipt) => {
-              console.log(receipt);
               this.success = {...receipt, address, show: true}
               data.list[index].status = 2
               data.list[index].statusTxt = '已结束'
               data.list[index] = { ...data.list[index], ...receipt,
                 weight: this.weight, heartbeat: this.heartbeat }
+              localStorage.setItem('blockathon', JSON.stringify(data));
             })
           }
-          localStorage.setItem('blockathon', JSON.stringify(data));
         }
       },
       goback() {
