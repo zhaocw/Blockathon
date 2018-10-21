@@ -97,9 +97,14 @@
       <el-dialog
         title="合同详情"
         :visible.sync="dialogVisible"
-        width="30%"
+        width="50%"
         :before-close="handleClose">
-        <span>合同详情及各个统计</span>
+        <div>
+          <p>体重：60KG</p>
+          <p>心跳：70次</p>
+          <p>上报时间：2018-10-21</p>
+          <p>是否达标：是</p>
+        </div>
         <span slot="footer" class="dialog-footer">
           <el-button @click="dialogVisible = false">取 消</el-button>
           <el-button type="primary" @click="dialogVisible = false">确 定</el-button>

@@ -50,6 +50,7 @@
     },
     methods: {
       itemClick(item) {
+        console.log(item.status);
         if (item.status == 1) {
           this.$router.push({ path: `/mobile/detail/${item.id}` })
         } else {

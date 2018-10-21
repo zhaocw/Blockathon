@@ -4,11 +4,11 @@
     <div class="list">
       <div class="item">
         <label class="item-label">体重</label>
-        <input :value="weight" class="item-input" placeholder="请输入体重(KG)" />
+        <input v-model="weight" class="item-input" placeholder="请输入体重(KG)" />
       </div>
       <div class="item">
         <label class="item-label">心跳</label>
-        <input :value="heartbeat" class="item-input" placeholder="请输入心跳(次)" />
+        <input v-model="heartbeat" class="item-input" placeholder="请输入心跳(次)" />
       </div>
     </div>
     <div class="footer" @click="submit">提交</div>
@@ -75,12 +75,15 @@
       },
 
       async submit() {
+        console.log(this.weight, this.heartbeat);
         const storage = localStorage.getItem('blockathon');
         if (storage) {
           const { id } = this.$route.params
           const data = JSON.parse(storage)
           const index = data.list.findIndex(item => item.id == id)
           if (index > -1) {
+
+            await this.meta.recordHealthData.call(this.weight, this.heartbeat)
             await this.meta.confirmProject.call()
             const { address } = data.list[index]
             this.web3.eth.getTransactionReceipt(address, (err, receipt) => {

@@ -4,11 +4,11 @@
     <div class="list">
       <div class="item">
         <label class="item-label">昵称</label>
-        <input :value="name" class="item-input" placeholder="请输入体重" />
+        <input v-model="name" class="item-input" placeholder="请输入体重" />
       </div>
       <div class="item">
         <label class="item-label">手机号</label>
-        <input :value="mobile" class="item-input" placeholder="请输入体重" />
+        <input v-model="mobile" class="item-input" placeholder="请输入体重" />
       </div>
     </div>
     <div class="footer" @click="submit">提交</div>
