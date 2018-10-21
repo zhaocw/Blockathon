@@ -83,7 +83,7 @@
           const index = data.list.findIndex(item => item.id == id)
           if (index > -1) {
 
-            await this.meta.recordHealthData.call(this.weight, this.heartbeat)
+            // await this.meta.recordHealthData.call(this.weight, this.heartbeat)
             await this.meta.confirmProject.call()
             const { address } = data.list[index]
             this.web3.eth.getTransactionReceipt(address, (err, receipt) => {
